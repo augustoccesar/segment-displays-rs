@@ -14,4 +14,4 @@ keywords = ["embedded-hal-driver", "3461BS"]
 [dependencies]
 embedded-hal = "1"
 
-display-shared = { path = "../display-shared" }
+display-shared = { version = "0.1", path = "../display-shared" }
