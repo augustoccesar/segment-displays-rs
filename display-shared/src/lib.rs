@@ -1,19 +1,44 @@
+//! Shared code between display-5161bs and display3461bs
 #![no_std]
 
 use embedded_hal::digital::PinState;
 
+/// Represents each segment on the 7-Segment digit.
+///
+/// The variants represents the segments on the following manner:
+/// ```text
+///       A                    
+///     -----
+///    |     |
+///  F |     | B
+///    |  G  |
+///     -----
+///    |     |
+///  E |     | C
+///    |  D  |
+///     -----    □ DP
+/// ```
 #[derive(Clone, Debug)]
 pub enum Segment {
+    /// Top
     A,
+    /// Top right
     B,
+    /// Bottom right
     C,
+    /// Bottom
     D,
+    /// Bottom left
     E,
+    /// Top left
     F,
+    /// Middle
     G,
+    /// Dot
     DP,
 }
 
+/// A group of 8 booleans representing the segments.
 #[derive(Default, Clone, Debug)]
 pub struct Digit {
     a: bool,
@@ -40,6 +65,13 @@ impl Digit {
         }
     }
 
+    /// Gets the [PinState] for a specific segment.
+    ///
+    /// On the displays the segments are turned on or off by the inverse of the boolean.
+    /// So for ease of use, they are represented "naturally" on the [Digit], but when parsing it
+    /// into a [PinState], we have to invert it.
+    ///
+    /// So, a segment as `true` is `ON` but is [PinState::Low].
     pub fn segment_pin_state(&self, segment: Segment) -> PinState {
         match segment {
             Segment::A => PinState::from(!self.a),
@@ -53,6 +85,7 @@ impl Digit {
         }
     }
 
+    /// Toggles the dp (dot) on or off.
     pub fn toggle_dp(&mut self) {
         self.dp = !self.dp;
     }
