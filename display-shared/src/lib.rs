@@ -2,6 +2,7 @@
 
 use embedded_hal::digital::PinState;
 
+#[derive(Clone, Debug)]
 pub enum Segment {
     A,
     B,
@@ -13,7 +14,7 @@ pub enum Segment {
     DP,
 }
 
-#[derive(Default)]
+#[derive(Default, Clone, Debug)]
 pub struct Digit {
     a: bool,
     b: bool,
