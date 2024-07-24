@@ -51,6 +51,10 @@ impl Digit {
             Segment::DP => PinState::from(!self.dp),
         }
     }
+
+    pub fn toggle_dp(&mut self) {
+        self.dp = !self.dp;
+    }
 }
 
 impl From<u8> for Digit {
