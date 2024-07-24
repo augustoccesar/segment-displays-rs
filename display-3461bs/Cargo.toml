@@ -6,6 +6,7 @@ version = "0.1.0"
 edition = "2021"
 authors = ["Augusto César <me@augustocesar.se>"]
 repository = "https://github.com/augustoccesar/segment-displays-rs"
+readme = "README.md"
 license = "MIT"
 categories = ["embedded", "hardware-support", "no-std"]
 keywords = ["embedded-hal-driver", "3461BS"]
