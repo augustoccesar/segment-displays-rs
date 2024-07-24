@@ -1,5 +1,6 @@
 [package]
 name = "display-shared"
+description = "Internal package used by display-3461bs and display-5161bs"
 version = "0.1.0"
 edition = "2021"
 
