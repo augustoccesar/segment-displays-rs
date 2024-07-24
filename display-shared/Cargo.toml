@@ -3,5 +3,8 @@ name = "display-shared"
 version = "0.1.0"
 edition = "2021"
 
+authors = ["Augusto César <me@augustocesar.se>"]
+license = "MIT"
+
 [dependencies]
 embedded-hal = "1"
