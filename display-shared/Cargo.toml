@@ -5,6 +5,7 @@ version = "0.1.0"
 edition = "2021"
 
 authors = ["Augusto César <me@augustocesar.se>"]
+repository = "https://github.com/augustoccesar/segment-displays-rs"
 license = "MIT"
 
 [dependencies]

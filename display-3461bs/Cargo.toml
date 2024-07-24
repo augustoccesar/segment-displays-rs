@@ -5,6 +5,7 @@ description = "Rust driver for the 4-Digit 7-Segment Display 3461BS"
 version = "0.1.0"
 edition = "2021"
 authors = ["Augusto César <me@augustocesar.se>"]
+repository = "https://github.com/augustoccesar/segment-displays-rs"
 license = "MIT"
 categories = ["embedded", "hardware-support", "no-std"]
 keywords = ["embedded-hal-driver", "3461BS"]
