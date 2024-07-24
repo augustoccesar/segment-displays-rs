@@ -104,4 +104,14 @@ impl<'a, E: embedded_hal::digital::Error> Display5161BS<'a, E> {
 
         self.show_digit(digit);
     }
+
+    pub fn show_number_dot(&mut self, number: u8, with_dot: bool) {
+        let mut digit = Digit::from(number);
+
+        if with_dot {
+            digit.toggle_dp();
+        }
+
+        self.show_digit(digit);
+    }
 }
