@@ -165,7 +165,7 @@ impl From<u8> for Digit {
                 digit.f = true;
                 digit.g = true;
             }
-            _ => panic!("Invalid u16. Must be 0..=9"), // TODO: Maybe implement TryFrom instead?
+            _ => panic!("Invalid u8 value for digit. Must be 0..=9"), // TODO: Maybe implement TryFrom instead?
         }
 
         return digit;
